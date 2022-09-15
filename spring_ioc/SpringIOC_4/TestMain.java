@@ -8,7 +8,7 @@ public class TestMain {
 	public static void main(String[] args) {
 		@SuppressWarnings("resource")
 		ApplicationContext app = new ClassPathXmlApplicationContext("com/springioc_4/applicationcontext.xml");
-		ConstructorMessege conmsg = (ConstructorMessege) app.getBean("constructormessege");
-		System.out.println("hello");
+		ConstructorMessege conmsg = (ConstructorMessege)app.getBean("constructormessege");
+		//System.out.println("hello");
 	}
 }
