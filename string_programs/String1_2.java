@@ -13,7 +13,7 @@ public class String1_2 {
 		System.out.println();
 		System.out.println("After sorting ascending :");
 		for(int j=0; j<arr.length;j++) {
-			for(int k=1; k<arr.length; k++) {
+			for(int k=1+j; k<arr.length; k++) {
 				if(arr[j]>arr[k]) {
 					char temp= arr[j];
 					arr[j]=arr[k];
