@@ -1,0 +1,42 @@
+CREATE TABLE `product` (
+  `product_id` int NOT NULL AUTO_INCREMENT,
+  `product_description` varchar(255) DEFAULT NULL,
+  `product_price` varchar(255) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  `product_quantity` int DEFAULT NULL,
+  PRIMARY KEY (`product_id`)
+
+INSERT INTO `product` VALUES (1,'Samsung Galaxy S20 FE 5G','39990','Mobile',35),(2,'HP Victus AMD Ryzen 5','59490','Laptop',30),(3,'JBL C 115 Bluetooth Truly Wireless in Ear Earbuds','3699','Earbuds',55),(4,'Sony SRS-XB13 Wireless Extra Bass Portable Compact Bluetooth Speaker','3690','Sony Speaker',45),(5,'SanDisk Ultra Dual 64GB USB 3.0 OTG Pen Drive','699','Pen Drive',55),(6,'Ant Esports KM500W Gaming Backlit Keyboard','1190','Keybord',65),(7,'Redgear A-10 Wired Gaming Mouse','269','Mouse',34),(8,'boAt Watch Blaze with 1.75” HD Display','3499','Digital watch',58),(9,'D-Link DIR-650IN Wireless N300 Router','1109','Router',40),(10,'HP Laserjet Pro M17a Single-Function Laser Printer','12000','Laser Printer',50);
+
+CREATE TABLE `users` (
+  `userid` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(20) DEFAULT NULL,
+  `lastname` varchar(20) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `contact` varchar(20) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `product_id` int DEFAULT NULL,
+  `ordered_quantity` int DEFAULT NULL,
+  `order_price` int DEFAULT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `user_id` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`),
+  CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
+
+CREATE TABLE `cart` (
+  `cart_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `product_id` int DEFAULT NULL,
+  PRIMARY KEY (`cart_id`),
+  KEY `userid` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`userid`),
+  CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
+
