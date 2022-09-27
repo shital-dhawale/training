@@ -1,0 +1,17 @@
+use e_commerce_jdbc;
+create table user(id int not null auto_increment primary key, name varchar (255), userId varchar(255), password varchar(255), email varchar(255)); 
+
+use e_commerce_jdbc;
+create table product(id int not null auto_increment primary key, name varchar (255), description varchar (255), price varchar(255), quantity int);
+
+use e_commerce_jdbc;
+insert into product(id,name, description, price, quantity)values(1,'Mobile','Samsung Galaxy S20 FE 5G','39990',35),(2,'Laptop','HP Victus AMD Ryzen 5','59490',30),(3,'Earbuds','JBL C 115 Bluetooth Truly Wireless in Ear Earbuds','3699',55),(4,'Sony Speaker','Sony SRS-XB13 Wireless Extra Bass Portable Compact Bluetooth Speaker','3690',45),(5,'Pen Drive','SanDisk Ultra Dual 64GB USB 3.0 OTG Pen Drive','699',55),(6,'Keybord','Ant Esports KM500W Gaming Backlit Keyboard','1190',65),(7,'Mouse','Redgear A-10 Wired Gaming Mouse','269',34),(8,'Digital watch','boAt Watch Blaze with 1.75” HD Display','3499',58),(9,'Router','D-Link DIR-650IN Wireless N300 Router','1109',40),(10,'Laser Printer','HP Laserjet Pro M17a Single-Function Laser Printer','12000',50);
+
+use e_commerce_jdbc;
+alter table product rename column id to prodict_id;
+
+use e_commerce_jdbc;
+alter table product rename column prodict_id to product_id;
+
+use e_commerce_jdbc;
+create table orders(order_id int not null auto_increment primary key, user_id int, product_id int, ordered_quantity int, order_price int, foreign key (user_id) REFERENCES  user(id), foreign key (product_id) REFERENCES product(product_id));
