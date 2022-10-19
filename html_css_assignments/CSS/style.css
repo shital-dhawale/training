@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+body {
+	background: linear-gradient(100deg, #f1cb64, #12eec8);
+}
+
+h1 {
+  color: rgb(222, 67, 0);
+  margin-left: 20px;
+}
+p{
+	color: rgb(17, 17, 18);
+}

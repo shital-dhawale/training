@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      p1 {
+        text-align: right;
+      }
+
+      div {
+        text-align: center;
+      }
+    </style>
+    <style>
+      .vl {
+        border: 6px solid green;
+        height: 580px;
+        text-align: center;
+      }
+    </style>
+    <style>
+      .verticalLine {
+        border-left: 4px solid #4b42f5;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 30;
+      }
+    </style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+    <meta charset="ISO-8859-1" />
+    <title>Task 2</title>
+  </head>
+  <body class="vl">
+    <img alt="" src="images/123.JPG" height="100px" width="900px" />
+
+    <div>
+      <h1>
+        <a class="active" href="">presentation</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Studies</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="">Staff</a>
+      </h1>
+    </div>
+
+    <div class="verticalLine"></div>
+
+    <div class="row">
+      <div class="column" style="background-color: #aaa">
+        <h2 style="color: red">News</h2>
+        <p style="color: blueviolet">Some text..</p>
+      </div>
+      <div class="column" style="background-color: #bbb">
+        <h2 style="color: rgb(255, 32, 255)">Announcements</h2>
+        <p style="color: rgb(196, 255, 2)">Some text..</p>
+      </div>
+    </div>
+
+    <h3 style="color: lightgreen">Contact:info@university.com</h3>
+    <h4 style="color: rebeccapurple">University &copy;</h4>
+  </body>
+</html>
